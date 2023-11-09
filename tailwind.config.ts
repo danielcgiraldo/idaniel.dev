@@ -13,7 +13,8 @@ export default {
             midnight: "#000814",
             "golden-poppy": "#FFC300",
             red: "#D0021B",
-            "mid-blue": "#001D3D"
+            "mid-blue": "#001D3D",
+            blue: "#003566"
         },
     },
     plugins: [
