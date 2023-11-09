@@ -12,8 +12,11 @@ export default {
             white: "#ffffff",
             midnight: "#000814",
             "golden-poppy": "#FFC300",
-            red: "#D0021B"
+            red: "#D0021B",
+            blue: "#003566"
         },
     },
-    plugins: [],
+    plugins: [
+        require("tailwind-scrollbar")
+    ],
 };

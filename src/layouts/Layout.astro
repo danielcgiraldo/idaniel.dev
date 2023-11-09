@@ -1,9 +1,10 @@
 ---
 interface Props {
     title: string;
+    unlockFlag: boolean;
 }
 
-const { title } = Astro.props;
+const { title, unlockFlag } = Astro.props;
 
 import Nav from "../ui/Nav.astro";
 ---
@@ -29,9 +30,9 @@ import Nav from "../ui/Nav.astro";
             rel="stylesheet"
         />
     </head>
-    <body class="bg-midnight text-white min-w-screen min-h-screen">
+    <body class="bg-midnight text-white min-w-screen min-h-screen scrollbar-thin scrollbar-thumb-blue scrollbar-rounded">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
-            <Nav />
+            <Nav unlockFlag={unlockFlag} />
             <slot />
         </div>
     </body>

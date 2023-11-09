@@ -19,7 +19,7 @@ export const POST = async ({ request } : { request: Request}) => {
         const result = await fetch("https://api.hcaptcha.com/siteverify", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `response=${body.token}&secret=${import.meta.env.HCAPTCHA_SECRET}`
+            body: `response=${body.token}&secret=${import.meta.env.HCAPTCHA_SECRET}&sitekey=${import.meta.env.HCAPTCHA_SITEKEY}`
         });
 
         const data = await result.json();

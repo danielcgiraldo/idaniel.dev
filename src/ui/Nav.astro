@@ -1,10 +1,14 @@
 ---
 import { LocationIcon, LockOpenIcon, SearchIcon } from "../lib/icons.tsx";
+
+const { unlockFlag } = Astro.props;
 ---
 
 <div class="w-full mt-2">
     <div class="flex justify-between py-2 items-center text-sm">
-        <ul class="flex font-semibold text-white divide-x divide-white/30 gap-2">
+        <ul
+            class="flex font-semibold text-white divide-x divide-white/30 gap-2"
+        >
             <li class="">
                 <a href="">Findata</a>
             </li>
@@ -13,9 +17,28 @@ import { LocationIcon, LockOpenIcon, SearchIcon } from "../lib/icons.tsx";
             </li>
         </ul>
         <div class="flex gap-5 items-center text-xs">
-            <p class="text-red font-bold tracking-widest flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping"></span> LIVE</p>
+            {
+                !unlockFlag && (
+                    <p class="text-red font-bold tracking-widest flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
+                        LIVE
+                    </p>
+                )
+            }
             <p>Thursday, Nov 9th 2023</p>
-            <a href="/unlock" class="text-golden-poppy font-semibold"><LockOpenIcon className="inline h-3.5 w-auto -mt-1.5" /> UNLOCK</a>
+            {
+                !unlockFlag ? (
+                    <a href="/unlock" class="text-golden-poppy font-semibold">
+                        <LockOpenIcon className="inline h-3.5 w-auto -mt-1.5" />{" "}
+                        UNLOCK
+                    </a>
+                ) : (
+                    <p class="text-red font-bold tracking-widest flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
+                        LIVE
+                    </p>
+                )
+            }
         </div>
     </div>
     <hr class="text-white/30" />
@@ -27,10 +50,13 @@ import { LocationIcon, LockOpenIcon, SearchIcon } from "../lib/icons.tsx";
             >
                 <p class="font-normal inline items-end">
                     iDaniel<strong class="font-normal text-golden-poppy"
-                        >.dev</strong>
+                        >.dev</strong
+                    >
                 </p>
             </a>
-            <p class="text-sm flex items-center gap-1"><LocationIcon className="h-2.5 w-auto" /> Colombia</p>
+            <p class="text-sm flex items-center gap-1">
+                <LocationIcon className="h-2.5 w-auto" /> Colombia
+            </p>
         </div>
         <div class="text-sm text-right">
             <p class="font-semibold">National University of Colombia</p>

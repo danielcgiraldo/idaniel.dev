@@ -2,6 +2,19 @@
 import Layout from "../layouts/Basic.astro";
 import UnlockComponent from "../components/unlock";
 const year = new Date().getFullYear();
+
+if (Astro.cookies.has("session")) {
+    const headers = new Headers();
+    headers.append("Cookie", Astro.cookies.get("session")!.value);
+    const response = await fetch(Astro.url.origin + "/api/verify", {
+        method: "GET",
+        headers: headers
+    });
+    if (response.status === 200) {
+        Astro.response.status = 302;
+        Astro.response.headers.set("Location", "/");
+    }
+}
 ---
 
 <Layout title="Unlock Content - Daniel Castillo">
@@ -30,9 +43,7 @@ const year = new Date().getFullYear();
                 <p class="text-white/30 text-xs mt-3 mb-3">
                     To protect personal information, it is necessary to confirm
                     that you are not a robot. Once verified, you will have
-                    unrestricted and free access to it for a period of 12 hours.
-                    After that, you can re-verify your non-robot status for
-                    another 12-hour access period.
+                    unrestricted and free access to it.
                 </p>
                 <p class="text-white/30 text-xs">Copyright © {year}{" "}<a class="text-white/50" href="/">Daniel Castillo</a>. All rights reserved.</p>
             </div>

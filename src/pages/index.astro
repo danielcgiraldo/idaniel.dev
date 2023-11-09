@@ -5,18 +5,20 @@ let unlockFlag = false;
 if (Astro.cookies.has("session")) {
     const headers = new Headers();
     headers.append("Cookie", Astro.cookies.get("session")!.value);
-    const response = await fetch(Astro.url + "/v1/getContent", {
+    const response = await fetch(Astro.url + "/api/verify", {
         method: "GET",
         headers: headers
     });
     if (response.status === 200) {
         unlockFlag = true;
+    } else {
+        Astro.cookies.delete("session");
     }
 }
 ---
 
-<Layout title="Daniel Castillo: Solution Developer">
+<Layout title="Daniel Castillo: Solution Developer" unlockFlag={unlockFlag}>
     <main class="px-8">
-        {unlockFlag ? "Desbloqueado" : "Bloqueado"}
+        {unlockFlag ? "Unlocked" : "Locked"}
     </main>
 </Layout>
