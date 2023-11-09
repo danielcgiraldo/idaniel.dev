@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Basic.astro";
+import UnlockComponent from "../components/unlock";
+const year = new Date().getFullYear();
+---
+
+<Layout title="Unlock Content - Daniel Castillo">
+    <main class="w-screen h-screen grid grid-cols-2">
+        <div class="flex justify-center">
+            <div class="max-w-lg w-full my-auto">
+                <a href="/" class="text-3xl mb-12 block">
+                    <p class="font-normal inline items-end">
+                        iDaniel<strong class="font-normal text-golden-poppy"
+                            >.dev</strong
+                        >
+                    </p>
+                </a>
+                <span class="block mb-2 tracking-widest text-lg">FREE</span>
+                <h1 class="text-5xl mb-8 block">
+                    Gain unlimited access to all of <strong
+                        class="font-normal text-golden-poppy"
+                        >Daniel Castillo</strong
+                    >
+                </h1>
+                <div class="block">
+                    <UnlockComponent client:load />
+                </div>
+
+                <hr class="text-white/30 mt-16" />
+                <p class="text-white/30 text-xs mt-3 mb-3">
+                    To protect personal information, it is necessary to confirm
+                    that you are not a robot. Once verified, you will have
+                    unrestricted and free access to it for a period of 12 hours.
+                    After that, you can re-verify your non-robot status for
+                    another 12-hour access period.
+                </p>
+                <p class="text-white/30 text-xs">Copyright © {year}{" "}<a class="text-white/50" href="/">Daniel Castillo</a>. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="overflow-hidden">
+            <img class="w-full img-moving" src="/projects.webp" alt="" />
+            <img class="w-full img-moving" src="/projects.webp" alt="" />
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .img-moving {
+        animation: bannermove 10s linear infinite;
+    }
+    @keyframes bannermove {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(0, -100%);
+        }
+    }
+</style>

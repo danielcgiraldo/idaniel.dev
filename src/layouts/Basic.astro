@@ -4,8 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-import Nav from "../ui/Nav.astro";
 ---
 
 <!doctype html>
@@ -30,9 +28,6 @@ import Nav from "../ui/Nav.astro";
         />
     </head>
     <body class="bg-midnight text-white min-w-screen min-h-screen">
-        <div class="max-w-7xl mx-auto px-5 sm:px-10">
-            <Nav />
-            <slot />
-        </div>
+        <slot />
     </body>
 </html>
