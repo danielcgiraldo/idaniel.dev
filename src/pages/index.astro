@@ -1,9 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+let unlockFlag = false;
+
+if (Astro.cookies.has("session")) {
+    const headers = new Headers();
+    headers.append("Cookie", Astro.cookies.get("session")!.value);
+    const response = await fetch(Astro.url + "/v1/getContent", {
+        method: "GET",
+        headers: headers
+    });
+    if (response.status === 200) {
+        unlockFlag = true;
+    }
+}
 ---
 
 <Layout title="Daniel Castillo: Solution Developer">
-	<main class="px-8">
-        
-	</main>
+    <main class="px-8">
+        {unlockFlag ? "Desbloqueado" : "Bloqueado"}
+    </main>
 </Layout>
