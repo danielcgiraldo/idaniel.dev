@@ -2,12 +2,21 @@
 import { LocationIcon, LockOpenIcon, SearchIcon } from "../lib/icons.tsx";
 
 const { unlockFlag } = Astro.props;
+
+// Get now date in format Day, Month Day Year
+const now = new Date();
+const nowDate = now.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
 ---
 
 <div class="w-full mt-2">
     <div class="flex justify-between py-2 items-center text-sm">
         <ul
-            class="flex font-semibold text-black divide-x divide-black/30 gap-2"
+            class="flex font-medium text-black divide-x divide-black/30 gap-2"
         >
             <li>
                 <a href="https://findata.vercel.app/" target="_blank" rel="noopener noreferrer" >Findata</a>
@@ -25,7 +34,7 @@ const { unlockFlag } = Astro.props;
                     </p>
                 )
             }
-            <p>Thursday, Nov 9th 2023</p>
+            <p>{nowDate}</p>
             {
                 !unlockFlag ? (
                     <a href="/unlock" class="text-highlight font-bold font-sans">
@@ -48,11 +57,11 @@ const { unlockFlag } = Astro.props;
                 href="/"
                 class="after:content-['blog'] after:bg-black after:text-white after:leading-6 after:text-[0.9rem] after:px-2 after:inline-block after:rotate-12 after:absolute after:-right-12 hover:after:rotate-0 relative text-xl sm:text-2xl"
             >
-                <p class="font-normal inline items-end">
+                <h1 class="font-normal inline items-end">
                     iDaniel<strong class="font-normal text-highlight"
                         >.dev</strong
                     >
-                </p>
+                </h1>
             </a>
             <p class="text-sm flex items-center gap-1 -mt-1">
                 <LocationIcon className="h-2.5 w-auto" />Colombia
@@ -64,8 +73,8 @@ const { unlockFlag } = Astro.props;
         </div>
     </div>
     <hr class="text-black/30" />
-    <nav class="flex justify-between py-3 items-center text-sm">
-        <ul class="flex gap-4 font-sans text-xs underline-offset-2">
+    <nav class="flex py-3 items-center text-sm justify-between relative">
+        <ul class="flex gap-3 font-sans text-xs underline-offset-2">
             <li>
                 <a href="" class="relative after:w-full after:content-[''] after:absolute after:-bottom-[3px] after:left-0 hover:after:bg-black after:h-0.5 after:rounded-sm">About</a>
             </li>
