@@ -7,10 +7,10 @@ const { unlockFlag } = Astro.props;
 <div class="w-full mt-2">
     <div class="flex justify-between py-2 items-center text-sm">
         <ul
-            class="flex font-semibold text-white divide-x divide-white/30 gap-2"
+            class="flex font-semibold text-black divide-x divide-black/30 gap-2"
         >
             <li class="">
-                <a href="">Findata</a>
+                <a href="" target="_blank" rel="noopener noreferrer" >Findata</a>
             </li>
             <li class="pl-2">
                 <a href="">Findata</a>
@@ -28,7 +28,7 @@ const { unlockFlag } = Astro.props;
             <p>Thursday, Nov 9th 2023</p>
             {
                 !unlockFlag ? (
-                    <a href="/unlock" class="text-golden-poppy font-semibold">
+                    <a href="/unlock" class="text-highlight font-semibold">
                         <LockOpenIcon className="inline h-3.5 w-auto -mt-1.5" />{" "}
                         UNLOCK
                     </a>
@@ -41,20 +41,20 @@ const { unlockFlag } = Astro.props;
             }
         </div>
     </div>
-    <hr class="text-white/30" />
+    <hr class="text-black/30" />
     <div class="flex justify-between py-5 items-center">
         <div>
             <a
                 href="/"
-                class="after:content-['blog'] after:bg-white after:text-midnight after:leading-6 after:text-[0.9rem] after:px-2 after:inline-block after:rotate-12 after:absolute after:-right-12 hover:after:rotate-0 relative text-xl sm:text-2xl hover:text-marrsgreen dark:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen"
+                class="after:content-['blog'] after:bg-black after:text-white after:leading-6 after:text-[0.9rem] after:px-2 after:inline-block after:rotate-12 after:absolute after:-right-12 hover:after:rotate-0 relative text-xl sm:text-2xl"
             >
                 <p class="font-normal inline items-end">
-                    iDaniel<strong class="font-normal text-golden-poppy"
+                    iDaniel<strong class="font-normal text-highlight"
                         >.dev</strong
                     >
                 </p>
             </a>
-            <p class="text-sm flex items-center gap-1">
+            <p class="text-sm flex items-center gap-1 -mt-1">
                 <LocationIcon className="h-2.5 w-auto" /> Colombia
             </p>
         </div>
@@ -63,7 +63,7 @@ const { unlockFlag } = Astro.props;
             <p>Systems Engenieering</p>
         </div>
     </div>
-    <hr class="text-white/30" />
+    <hr class="text-black/30" />
     <nav class="flex justify-between py-4 items-center">
         <ul class="flex gap-4">
             <li>
@@ -80,6 +80,6 @@ const { unlockFlag } = Astro.props;
             <SearchIcon className="h-4 w-auto" />
         </div>
     </nav>
-    <hr class="text-white mb-[3px]" />
-    <hr class="text-white" />
+    <hr class="text-black mb-[3px]" />
+    <hr class="text-black" />
 </div>

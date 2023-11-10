@@ -9,12 +9,10 @@ export default {
         colors: {
             transparent: "transparent",
             current: "currentColor",
-            white: "#ffffff",
-            midnight: "#000814",
-            "golden-poppy": "#FFC300",
-            red: "#D0021B",
-            "mid-blue": "#001D3D",
-            blue: "#003566"
+            white: "#FFFCF9",
+            black: "#071013",
+            red: "#C20114",
+            highlight: "#208AAE"
         },
     },
     plugins: [
