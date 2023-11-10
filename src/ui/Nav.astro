@@ -16,10 +16,10 @@ const { unlockFlag } = Astro.props;
                 <a href="">Findata</a>
             </li>
         </ul>
-        <div class="flex gap-5 items-center text-xs">
+        <div class="flex gap-4 items-center text-xs">
             {
                 !unlockFlag && (
-                    <p class="text-red font-bold tracking-widest flex items-center gap-1">
+                    <p class="text-red font-bold tracking-widest flex items-center gap-1.5 font-sans">
                         <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
                         LIVE
                     </p>
@@ -28,12 +28,12 @@ const { unlockFlag } = Astro.props;
             <p>Thursday, Nov 9th 2023</p>
             {
                 !unlockFlag ? (
-                    <a href="/unlock" class="text-highlight font-semibold">
+                    <a href="/unlock" class="text-highlight font-bold font-sans">
                         <LockOpenIcon className="inline h-3.5 w-auto -mt-1.5" />{" "}
                         UNLOCK
                     </a>
                 ) : (
-                    <p class="text-red font-bold tracking-widest flex items-center gap-1">
+                    <p class="text-red font-bold tracking-widest flex items-center gap-1.5 font-sans">
                         <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
                         LIVE
                     </p>
@@ -55,25 +55,25 @@ const { unlockFlag } = Astro.props;
                 </p>
             </a>
             <p class="text-sm flex items-center gap-1 -mt-1">
-                <LocationIcon className="h-2.5 w-auto" /> Colombia
+                <LocationIcon className="h-2.5 w-auto" />Colombia
             </p>
         </div>
         <div class="text-sm text-right">
             <p class="font-semibold">National University of Colombia</p>
-            <p>Systems Engenieering</p>
+            <p class="font-light -mt-0.5">Systems Engenieering</p>
         </div>
     </div>
     <hr class="text-black/30" />
-    <nav class="flex justify-between py-4 items-center">
-        <ul class="flex gap-4">
+    <nav class="flex justify-between py-3 items-center text-sm">
+        <ul class="flex gap-4 font-sans text-xs underline-offset-2">
             <li>
-                <a href="">About</a>
+                <a href="" class="relative after:w-full after:content-[''] after:absolute after:-bottom-[3px] after:left-0 hover:after:bg-black after:h-0.5 after:rounded-sm">About</a>
             </li>
             <li>
-                <a href="">Projects</a>
+                <a href="" class="relative after:w-full after:content-[''] after:absolute after:-bottom-[3px] after:left-0 hover:after:bg-black after:h-0.5 after:rounded-sm">Projects</a>
             </li>
             <li>
-                <a href="">Blog</a>
+                <a href="" class="relative after:w-full after:content-[''] after:absolute after:-bottom-[3px] after:left-0 hover:after:bg-black after:h-0.5 after:rounded-sm">Blog</a>
             </li>
         </ul>
         <div>
