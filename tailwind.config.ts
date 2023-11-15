@@ -14,7 +14,7 @@ export default {
             black: "#071013",
             red: "#C20114",
             highlight: "#208AAE"
-        },
+        }
     },
     plugins: [
         require("tailwind-scrollbar")

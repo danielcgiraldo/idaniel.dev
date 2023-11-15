@@ -1,5 +1,5 @@
 ---
-import { LocationIcon, LockOpenIcon, SearchIcon } from "../lib/icons.tsx";
+import { LocationIcon, LockOpenIcon, MenuIcon, SearchIcon } from "../lib/icons.tsx";
 
 const { unlockFlag } = Astro.props;
 
@@ -35,6 +35,7 @@ const nowDate = now.toLocaleDateString("en-US", {
                     </a>
                 ) : ""
             }
+            <button class="font-semibold font-sans text-black"><MenuIcon className="w-4 h-auto" /></button>
         </div>
     </div>
     <hr class="text-black/30" />
