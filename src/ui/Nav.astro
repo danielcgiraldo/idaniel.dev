@@ -26,14 +26,6 @@ const nowDate = now.toLocaleDateString("en-US", {
             </li>
         </ul>
         <div class="flex gap-4 items-center text-xs">
-            {
-                !unlockFlag && (
-                    <p class="text-red font-bold tracking-widest flex items-center gap-1.5 font-sans">
-                        <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
-                        LIVE
-                    </p>
-                )
-            }
             <p>{nowDate}</p>
             {
                 !unlockFlag ? (
@@ -41,12 +33,7 @@ const nowDate = now.toLocaleDateString("en-US", {
                         <LockOpenIcon className="inline h-3.5 w-auto -mt-1.5" />{" "}
                         UNLOCK
                     </a>
-                ) : (
-                    <p class="text-red font-bold tracking-widest flex items-center gap-1.5 font-sans">
-                        <span class="w-1.5 h-1.5 rounded-full bg-red inline-block animate-ping" />{" "}
-                        LIVE
-                    </p>
-                )
+                ) : ""
             }
         </div>
     </div>

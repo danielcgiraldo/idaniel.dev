@@ -2,9 +2,10 @@
 interface Props {
     title: string;
     unlockFlag: boolean;
+    description?: string;
 }
 
-const { title, unlockFlag } = Astro.props;
+const { title, unlockFlag, description } = Astro.props;
 
 import Nav from "../ui/Nav.astro";
 ---
@@ -13,12 +14,25 @@ import Nav from "../ui/Nav.astro";
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <meta name="generator" content={Astro.generator} />
+        <!-- SEO -->
+        <meta name="description" content={description ? description : "Daniel: Web Developer & Tech Explorer. Explore a portfolio showcasing innovative projects in web development and data science. Collaborative problem-solver dedicated to practical solutions. Join me on a journey of continuous learning and impactful digital experiences."} />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <title>{title}</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <meta property=”og:description” content=""/>
+        <meta property=”og:url” content="https://idaniel.dev/" />
+        <meta property=”og:image” content=”https://tusitio.com/wp-content/uploads/2020/04/marketing-de-contenidos.jpg” />
+        <meta name=”twitter:title” content="70 char" />
+        <meta name=”twitter:description” content="200 char" />
+        <meta name=”twitter:url” content=”http://www.tusitio.com” />
+        <meta name=”twitter:image” content=”http://www.tusitio.com /nombre-de-la-imagen.jpg” />
+        <link rel=»canonical» href=»https://seocrawl.com/» />
+        <meta name=”robots” content="index, follow">
+
+
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        
 
         <!-------------------- Addons -------------------->
 
