@@ -1,0 +1,58 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    className?: string;
+    author?: string;
+    video: {
+        src: string;
+        poster?: string;
+    };
+    link?: {
+        href: string;
+        blank?: boolean;
+    };
+    type?: string;
+}
+
+const { title, description, className, author, video, link, type } = Astro.props;
+---
+
+{
+    link ? (
+        <a
+            href={link.href}
+            class={"block " + className}
+            target={link.blank ? "_blank" : "_self"}
+            rel={link.blank ? "noopener noreferrer" : ""}
+        >
+            <article>
+                <video
+                    src={video.src}
+                    poster={video.poster}
+                    autoplay
+                    muted
+                    loop
+                />
+                {author && (
+                    <p class="ml-auto text-right text-xs mt-1 text-black/40">
+                        {author}
+                    </p>
+                )}
+                <h3 class="mt-2 font-semibold text-lg leading-6">{title}</h3>
+                <p class="mt-1 text-sm text-black/70">{description}</p>
+                {
+                    type && (
+                        <p class="text-xs text-black/30 font-sans tracking-wider mt-1 uppercase">{type}</p>
+                    )
+                }
+            </article>
+        </a>
+    ) : (
+        <article class={"block " + className}>
+            <video src={video.src} poster={video.poster} autoplay muted loop />
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </article>
+    )
+}

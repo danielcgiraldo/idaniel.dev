@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import EditorNote from "../components/EditorNote.astro";
+import SideVideoArticle from "../components/SideVideoArticle.astro";
 let unlockFlag = false;
 
 if (Astro.cookies.has("session")) {
@@ -38,6 +39,7 @@ if (Astro.cookies.has("session")) {
             </div>
             <div class="col-span-3 pl-4">
                 <EditorNote unlockFlag={unlockFlag} />
+                <SideVideoArticle author="shots.so" className="mt-4" title="Shots.so Create Amazing Mockups —Your Time Saving Design Companion" description="Shots.so is a free online tool that will help you create beautiful mockups with just a few clicks." video={{src: "/image/resource/shotsso.mp4"}} link={{href: "https://shots.so", blank: true}} type="resource" />
             </div>
         </div>
     </main>
