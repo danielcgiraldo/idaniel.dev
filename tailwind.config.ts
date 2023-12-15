@@ -14,6 +14,9 @@ export default {
             black: "#071013",
             red: "#C20114",
             highlight: "#208AAE"
+        },
+        lineHeight: {
+            '6.5': '1.625rem',
         }
     },
     plugins: [
